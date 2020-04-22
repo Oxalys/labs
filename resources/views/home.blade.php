@@ -17,3 +17,7 @@
         </div>
     </div>
 @stop
+@section('css')
+<link rel="stylesheet" href="{{asset("css/styleAdminLTE.css")}}">
+    
+@endsection
