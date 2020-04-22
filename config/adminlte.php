@@ -107,7 +107,7 @@ return [
     'classes_content' => 'container-fluid',
     'classes_sidebar' => 'sidebar-light-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-light navbar-light',
+    'classes_topnav' => 'navbar-dark navbar-light',
     'classes_topnav_nav' => 'navbar-expand-md',
     'classes_topnav_container' => 'container',
 
@@ -214,37 +214,37 @@ return [
             'submenu' => [
                 [
                     'text' => 'Header',
-                    'url'  => 'admin/header',
+                    'url'  => '/header',
                     'icon' => 'far fa-fw fa-file',
                 ],
                 [
                     'text' => 'Service Overview',
-                    'url'  => 'admin/header',
+                    'url'  => '/overview',
                     'icon' => 'far fa-fw fa-file',
                 ],
                 [
                     'text' => 'About',
-                    'url'  => 'admin/header',
+                    'url'  => '/about',
                     'icon' => 'far fa-fw fa-file',
                 ],
                 [
                     'text' => 'Testimonials',
-                    'url'  => 'admin/header',
+                    'url'  => '/testi',
                     'icon' => 'far fa-fw fa-file',
                 ],
                 [
                     'text' => 'Promotion',
-                    'url'  => 'admin/header',
+                    'url'  => '/promo',
                     'icon' => 'far fa-fw fa-file',
                 ],
                 [
                     'text' => 'Contact',
-                    'url'  => 'admin/header',
+                    'url'  => '/contactSection',
                     'icon' => 'far fa-fw fa-file',
                 ],
                 [
                     'text' => 'Footer',
-                    'url'  => 'admin/header',
+                    'url'  => '/footer',
                     'icon' => 'far fa-fw fa-file',
                 ],
             ],
@@ -254,12 +254,12 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Service 1',
+                    'text' => 'Services',
                     'url'  => 'admin/header',
                     'icon' => 'far fa-fw fa-file',
                 ],
                 [
-                    'text' => 'Service 2',
+                    'text' => 'Articles',
                     'url'  => 'admin/header',
                     'icon' => 'far fa-fw fa-file',
                 ],

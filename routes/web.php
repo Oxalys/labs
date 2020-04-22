@@ -27,3 +27,14 @@ Route::get('/home', function() {
     return view('home');
 })->name('home')->middleware('auth');
 
+
+
+
+Route::get('/header', 'HeaderController@indexview')->name('header.edit');
+Route::get('/overview', 'OverviewController@indexview')->name('overview.edit');
+Route::get('/about', 'AboutController@indexview')->name('about.edit');
+Route::get('/testi', 'TestiController@indexview')->name('testi.edit');
+Route::get('/promo', 'PromoController@indexview')->name('promo.edit');
+Route::get('/contactSection', 'ContactEditController@indexview')->name('contact.edit');
+Route::get('/footer', 'FooterController@indexview')->name('footer.edit');
+
