@@ -13,12 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
- 
-
-
 Route::resource("/", "WelcomeController");
 Route::resource("/contact", "ContactController");
 Route::resource("/services", "ServiceController");
@@ -32,3 +26,4 @@ Auth::routes();
 Route::get('/home', function() {
     return view('home');
 })->name('home')->middleware('auth');
+

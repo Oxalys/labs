@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'BackOffice',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,11 +45,11 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b>LABS</b>',
+    'logo_img' => 'img/logo.png',
+    'logo_img_class' => 'brand-image elevation-0',
     'logo_img_xl' => null,
-    'logo_img_xl_class' => 'brand-image-xs',
+    'logo_img_xl_class' => 'brand-image-xxs',
     'logo_img_alt' => 'AdminLTE',
 
     /*
@@ -105,9 +105,9 @@ return [
     'classes_brand_text' => '',
     'classes_content_header' => 'container-fluid',
     'classes_content' => 'container-fluid',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-light navbar-light',
     'classes_topnav_nav' => 'navbar-expand-md',
     'classes_topnav_container' => 'container',
 
@@ -209,22 +209,101 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
+            'text'    => 'Homepage',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Header',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'Service Overview',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'About',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'Testimonials',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'Promotion',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'Contact',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'Footer',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+            ],
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text'    => 'Service',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Service 1',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'Service 2',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'Newsletter',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                
+            ],
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'    => 'Contact',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Maps',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+            ],
         ],
+        [
+            'text'    => 'Blog',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Section 1',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'Section 2',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'Section 3',
+                    'url'  => 'admin/header',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+            ],
+        ],
+        
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -236,57 +315,7 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
-        ],
+       
     ],
 
     /*
