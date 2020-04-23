@@ -218,11 +218,6 @@ return [
                     'icon' => 'far fa-fw fa-file',
                 ],
                 [
-                    'text' => 'Service Overview',
-                    'url'  => '/overview',
-                    'icon' => 'far fa-fw fa-file',
-                ],
-                [
                     'text' => 'About',
                     'url'  => '/about',
                     'icon' => 'far fa-fw fa-file',
@@ -230,6 +225,11 @@ return [
                 [
                     'text' => 'Testimonials',
                     'url'  => '/testi',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+                [
+                    'text' => 'Service Overview',
+                    'url'  => '/overview',
                     'icon' => 'far fa-fw fa-file',
                 ],
                 [
