@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\About;
+
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -11,9 +13,10 @@ class AboutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexview()
+    public function index()
     {
-        return view('backoffice.aboutEdit');
+        $abouts = About::find(1);
+        return view('backoffice.aboutEdit', compact("abouts"));
     }
 
 
@@ -67,9 +70,14 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, About $about)
     {
-        //
+        $about->titre=$request->input('titre');
+        $about->texteGauche=$request->input('texteGauche');
+        $about->texteDroite=$request->input('texteDroite');
+        $about->video=$request->input('video');
+        $about->save();
+        return redirect()->route("index");
     }
 
     /**

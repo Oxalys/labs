@@ -210,96 +210,96 @@ return [
     'menu' => [
         [
             'text'    => 'Homepage',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-house-user',
             'submenu' => [
                 [
                     'text' => 'Header',
                     'url'  => '/header',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-images',
                 ],
                 [
                     'text' => 'About',
                     'url'  => '/about',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-info',
                 ],
                 [
                     'text' => 'Testimonials',
                     'url'  => '/testi',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-comment-dots',
                 ],
                 [
                     'text' => 'Service Overview',
                     'url'  => '/overview',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-poll-h',
                 ],
                 [
                     'text' => 'Promotion',
                     'url'  => '/promo',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-ad',
                 ],
                 [
                     'text' => 'Contact',
                     'url'  => '/contactSection',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-map-marker-alt',
                 ],
                 [
                     'text' => 'Footer',
                     'url'  => '/footer',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-link',
                 ],
             ],
         ],
         [
             'text'    => 'Service',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-poll-h',
             'submenu' => [
                 [
                     'text' => 'Services',
                     'url'  => 'admin/header',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-poll-h',
                 ],
                 [
                     'text' => 'Articles',
                     'url'  => 'admin/header',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-newspaper',
                 ],
                 [
                     'text' => 'Newsletter',
                     'url'  => 'admin/header',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-envelope',
                 ],
                 
             ],
         ],
         [
             'text'    => 'Contact',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-map-marker-alt',
             'submenu' => [
                 [
                     'text' => 'Maps',
                     'url'  => 'admin/header',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-map',
                 ],
             ],
         ],
         [
             'text'    => 'Blog',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-newspaper',
             'submenu' => [
                 [
                     'text' => 'Section 1',
                     'url'  => 'admin/header',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-file',
                 ],
                 [
                     'text' => 'Section 2',
                     'url'  => 'admin/header',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-file',
                 ],
                 [
                     'text' => 'Section 3',
                     'url'  => 'admin/header',
-                    'icon' => 'far fa-fw fa-file',
+                    'icon' => 'fas fa-fw fa-file',
                 ],
             ],
         ],

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Header;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class BlogController extends Controller
 {
@@ -14,7 +17,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view ('blog.blog');
+        $header = Header::all();
+        return view ('blog.blog', compact("header"));
     }
 
     /**

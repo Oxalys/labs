@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Welcome;
+use App\Header;
+use App\About;
+use App\ImgHeader;
+use App\Footer;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -14,7 +18,11 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        return view('welcome.welcome');
+        $header = Header::all();
+        $about = About::all();
+        $imgHeader = ImgHeader::all();
+        $footer = Footer::all();
+        return view('welcome.welcome', compact("header", "about", "imgHeader", "footer"));
     }
 
     /**

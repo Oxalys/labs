@@ -38,3 +38,7 @@ Route::get('/promo', 'PromoController@indexview')->name('promo.edit');
 Route::get('/contactSection', 'ContactEditController@indexview')->name('contact.edit');
 Route::get('/footer', 'FooterController@indexview')->name('footer.edit');
 
+
+Route::resource("header","HeaderController");
+Route::resource("about","AboutController");
+

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Header;
+use App\ImgHeader;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HeaderController extends Controller
 {
@@ -11,9 +14,11 @@ class HeaderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexview()
+    public function index()
     {
-        return view('backoffice.headerEdit');
+        $headers = Header::find(1);
+        $img_headers = ImgHeader::all();
+        return view("backoffice.headerEdit", compact("headers", "img_headers"));
     }
 
     /**
@@ -34,7 +39,13 @@ class HeaderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $storage=Storage::disk('public')->put('', $request->file('img'));
+    
+    $imgHeader= new ImgHeader();
+    $imgHeader->img = $storage;
+    
+    $imgHeader->save();
+    return  redirect()->back();
     }
 
     /**
@@ -66,9 +77,16 @@ class HeaderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Header $header)
     {
-        //
+        if ($request->hasFile('logo')) {
+            $logo=Storage::disk('public')->put('', $request->file('logo'));
+            $header->logo=$logo;
+        }
+
+        $header->texte=$request->input('texte');
+        $header->save();
+        return redirect()->route("index");
     }
 
     /**

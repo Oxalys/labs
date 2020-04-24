@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Footer;
+
 use Illuminate\Http\Request;
 
 class FooterController extends Controller
@@ -13,6 +15,7 @@ class FooterController extends Controller
      */
     public function indexview()
     {
+        $footers = Footer::all();
         return view('backoffice.footerEdit');
     }
 

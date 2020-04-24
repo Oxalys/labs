@@ -5,7 +5,9 @@
 		<!-- Header section -->
 		<header class="header-section">
 			<div class="logo">
-				<img src="img/logo.png" alt=""><!-- Logo -->
+				@foreach ($header as $item)
+				<img src="{{asset("storage/".$item->logo)}}" height="40px" alt="">
+				@endforeach <!-- Logo -->
 			</div>
 			<!-- Navigation -->
 			<div class="responsive"><i class="fa fa-bars"></i></div>
@@ -26,14 +28,18 @@
 	<div class="hero-section">
 		<div class="hero-content">
 			<div class="hero-center">
-				<img src="img/big-logo.png" alt="">
-				<p>Get your freebie template now!</p>
+				@foreach ($header as $item)
+				<img src="{{asset("storage/".$item->logo)}}" height="230px" alt="">
+				<p>{{$item->texte}}</p>
+				@endforeach
 			</div>
 		</div>
 		<!-- slider -->
 		<div id="hero-slider" class="owl-carousel">
-			<div class="item  hero-item" data-bg="img/01.jpg"></div>
-			<div class="item  hero-item" data-bg="img/02.jpg"></div>
+			@foreach ($imgHeader as $item)
+				<div class="item  hero-item" data-bg="{{asset("storage/".$item->img)}}"></div>
+				<div class="item  hero-item" data-bg="{{asset("storage/".$item->img)}}"></div>
+			@endforeach
 		</div>
 	</div>
 	<!-- Intro Section -->
@@ -85,15 +91,17 @@
 		<!-- About contant -->
 		<div class="about-contant">
 			<div class="container">
+				@foreach ($about as $item)
+					
 				<div class="section-title">
-					<h2>Get in <span>the Lab</span> and discover the world</h2>
+					<h2>{{$item->titre}}</h2>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximus ipsum non ornare vporttitor porttitorestibulum. Sed libero nibh, feugiat at enim id, bibendum sollicitudin arcu.</p>
+						<p>{{$item->texteGauche}}</p>
 					</div>
 					<div class="col-md-6">
-						<p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. Nam convallis vel erat id dictum. Sed ut risus in orci convallis viverra a eget nisi. Aenean pellentesque elit vitae eros dignissim ultrices. Quisque porttitor porttitorlaoreet vel risus et luctus.</p>
+						<p>{{$item->texteDroite}}</p>
 					</div>
 				</div>
 				<div class="text-center mt60">
@@ -104,17 +112,18 @@
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
 							<img src="img/video.jpg" alt="">
-							<a href="https://www.youtube.com/watch?v=JgHfx2v9zOU" class="video-popup">
+							<a href="{{$item->video}}" class="video-popup">
 								<i class="fa fa-play"></i>
 							</a>
 						</div>
 					</div>
 				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
 	<!-- About section end -->
-
+	
 
 	<!-- Testimonial section -->
 	<div class="testimonial-section pb100">
@@ -335,7 +344,7 @@
 				</div>
 			</div>
 			<div class="text-center">
-				<a href="" class="site-btn">Browse</a>
+				<a href="{{route('services.index')}}" class="site-btn">Browse</a>
 			</div>
 		</div>
 	</div>

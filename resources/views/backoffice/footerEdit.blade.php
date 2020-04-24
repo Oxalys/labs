@@ -1,6 +1,26 @@
 @extends('adminlte::page')
 
 @section('content')
+<header>
+    <h1 class="editation text-center">Footer</h1>
+</header>
+
+{{-- logo --}}
+<div class="container">
+  <div class="form-register">
+  <form name="" action="{{route("footer.update", $footers)}}" method="POST" enctype="multipart/form-data" >
+  @csrf
+  @method("PUT")
+  <div class="form-group d-flex">
+    <label class="mr-3 mt-2" for="">Phrase:</label>
+    <input class="form-control w-25 mr-3" value="" name="texte">
+    <label class="mr-3 mt-2" for="">Phrase:</label>
+    <input type="url" class="form-control w-25 mr-3" value="" name="lien">
+    <input type="submit" value="Update" class="btn btn-primary mb-2">
+  </div>
+</form>
+@endsection
+@section('css')
+<link rel="stylesheet" href="{{asset("css/styleAdminLTE.css")}}">
     
-<h1>infos</h1>
 @endsection

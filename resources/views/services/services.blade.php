@@ -5,7 +5,9 @@
     	<!-- Header section -->
 	<header class="header-section">
 		<div class="logo">
-			<img src="img/logo.png" alt=""><!-- Logo -->
+			@foreach ($header as $item)
+				<img src="{{asset("storage/".$item->logo)}}" height="40px" alt="">
+				@endforeach <!-- Logo -->
 		</div>
 		<!-- Navigation -->
 		<div class="responsive"><i class="fa fa-bars"></i></div>

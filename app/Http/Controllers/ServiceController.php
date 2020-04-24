@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Service;
+use App\Header;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
@@ -14,7 +16,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view ('services.services');
+        $header = Header::all();
+        return view ('services.services', compact("header"));
     }
 
     /**
