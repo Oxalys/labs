@@ -98,7 +98,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6">
-						<p>{{$item->texteGauche}}</p>
+						<p>{{$item->texteGauche}} Lorem ipsum </p>
 					</div>
 					<div class="col-md-6">
 						<p>{{$item->texteDroite}}</p>

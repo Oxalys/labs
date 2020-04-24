@@ -13,10 +13,10 @@ class FooterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexview()
+    public function index()
     {
-        $footers = Footer::all();
-        return view('backoffice.footerEdit');
+        $footer = Footer::find(1);
+        return view('backoffice.footerEdit', compact('footer'));
     }
 
 
@@ -70,9 +70,13 @@ class FooterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Footer $footer)
     {
-        //
+        $footer->texte=$request->input('texte');
+        $footer->textLien=$request->input('textLien');
+        $footer->lien=$request->input('lien');
+        $footer->save();
+        return redirect()->route("index");
     }
 
     /**

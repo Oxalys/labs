@@ -13,8 +13,8 @@ class FooterSeeder extends Seeder
     {
         DB::table('footers')->insert([
             
-            'texte' => "Cras ex mauris, .",
-
+            'texte' => "2017 All rights reserved. Designed by ",
+            'textLien' => "troll", 
             'lien' => "https://www.facebook.com/home.php",
         ]);
     }

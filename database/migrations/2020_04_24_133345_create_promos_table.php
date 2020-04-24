@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewslatersTable extends Migration
+class CreatePromosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateNewslatersTable extends Migration
      */
     public function up()
     {
-        Schema::create('newslaters', function (Blueprint $table) {
+        Schema::create('promos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('email');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateNewslatersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('newslaters');
+        Schema::dropIfExists('promos');
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Promo;
+
 use Illuminate\Http\Request;
 
 class PromoController extends Controller
@@ -11,9 +13,10 @@ class PromoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexview()
+    public function index()
     {
-        return view('backoffice.promoEdit');
+        $promo = Promo::find(1);
+        return view('backoffice.promoEdit', compact('promo'));
     }
 
 
@@ -67,9 +70,12 @@ class PromoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Promo $promo)
     {
-        //
+        $promo->titre=$request->input('titre');
+        $promo->texte=$request->input('texte');
+        $promo->save();
+        return redirect()->route("index");
     }
 
     /**

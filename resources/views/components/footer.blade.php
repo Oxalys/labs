@@ -1,5 +1,9 @@
 	<!-- Footer section -->
 	<footer class="footer-section my-0">
-		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
+		<div class="d-flex">
+			<h2>{{$footer->texte}} @ 
+			<a href="{{$footer->lien}}" target="_blank">{{$footer->textLien}}</a></h2>
+		</div>
+		
 	</footer>
 	<!-- Footer section end -->

@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Welcome;
 use App\Header;
-use App\About;
 use App\ImgHeader;
+use App\About;
+use App\Promo;
 use App\Footer;
 use Illuminate\Http\Request;
 
@@ -21,8 +22,9 @@ class WelcomeController extends Controller
         $header = Header::all();
         $about = About::all();
         $imgHeader = ImgHeader::all();
-        $footer = Footer::all();
-        return view('welcome.welcome', compact("header", "about", "imgHeader", "footer"));
+        $promo = Promo::all();
+        $footer = Footer::find(1);
+        return view('welcome.welcome', compact("header", "imgHeader", "about", "promo", "footer"));
     }
 
     /**

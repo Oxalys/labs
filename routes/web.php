@@ -41,4 +41,5 @@ Route::get('/footer', 'FooterController@indexview')->name('footer.edit');
 
 Route::resource("header","HeaderController");
 Route::resource("about","AboutController");
+Route::resource("footer","FooterController");
 
