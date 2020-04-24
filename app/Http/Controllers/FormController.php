@@ -2,39 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Welcome;
-use App\Header;
-use App\ImgHeader;
-use App\About;
-use App\User;
-use App\Promo;
-use App\Contact;
-use App\Footer;
+use App\Form;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MessageMail;
 
-class WelcomeController extends Controller
+class FormController extends Controller
 {
-    /**
+    /*
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $header = Header::all();
-        $about = About::all();
-        $imgHeader = ImgHeader::all();
-
-        $CEO = User::where('role_id','=', 1)->first();
-        $teams = User::inRandomOrder()->where('role_id','!=', 4)->where('role_id','!=', 1)->take(2)->get();
-    
-        $promo = Promo::all();
-        $contactSection = Contact::all();
-        $footer = Footer::find(1);
-        return view('welcome.welcome', compact("header", "imgHeader", "about", "CEO", "teams", "promo", "contactSection", "footer"));
+        //
     }
 
-    /**
+    /*
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -44,7 +29,7 @@ class WelcomeController extends Controller
         //
     }
 
-    /**
+    /*
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -52,16 +37,36 @@ class WelcomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form =new Form();
+
+        $form->nom = $request->input('nom');
+        $form->subject = $request->input('subject');
+        $form->email = $request->input('email');
+        $form->message = $request->input('message');
+
+        $form->save();
+
+        $name =$request->input('nom');
+
+        $email =$request->input('email');
+
+        $subject =$request->input('subject');
+
+        $message =$request->input('message');
+
+
+        Mail::to('bryan.londot@hotmail.com')->send(new MessageMail($request));
+
+        return redirect()->back();
     }
 
-    /**
+    /*
      * Display the specified resource.
      *
-     * @param  \App\Welcome  $welcome
+     * @param  \App\Form  $form
      * @return \Illuminate\Http\Response
      */
-    public function show(Welcome $welcome)
+    public function show(Form $form)
     {
         //
     }
@@ -69,33 +74,32 @@ class WelcomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Welcome  $welcome
+     * @param  \App\Form  $form
      * @return \Illuminate\Http\Response
      */
-    public function edit(Welcome $welcome)
+    public function edit(Form $form)
     {
         //
     }
-
-    /**
+    /*
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Welcome  $welcome
+     * @param  \App\Form  $form
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Welcome $welcome)
+    public function update(Request $request, Form $form)
     {
         //
     }
 
-    /**
+    /*
      * Remove the specified resource from storage.
      *
-     * @param  \App\Welcome  $welcome
+     * @param  \App\Form  $form
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Welcome $welcome)
+    public function destroy(Form $form)
     {
         //
     }

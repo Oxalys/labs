@@ -14,7 +14,7 @@ class FooterSeeder extends Seeder
         DB::table('footers')->insert([
             
             'texte' => "2017 All rights reserved. Designed by ",
-            'textLien' => "troll", 
+            'textLien' => "Colorlib", 
             'lien' => "https://www.facebook.com/home.php",
         ]);
     }

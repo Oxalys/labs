@@ -15,8 +15,8 @@ class CreateImgHeadersTable extends Migration
     {
         Schema::create('img_headers', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('img');
+            $table->timestamps();
         });
     }
 

@@ -10,13 +10,17 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function role(){
+        return $this->belongsTo('App\Role','role_id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role_id',
+        'name', 'email', 'password', 'role_id', 'photo',
     ];
 
     /**
@@ -36,7 +40,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function role() {
-        return $this->belongsTo('App\Role');
-    }
 }

@@ -244,7 +244,7 @@
 				</div>
 			</div>
 			<div class="text-center mt100">
-				<a href="" class="site-btn">Browse</a>
+				<a href="#card" class="js-scrollTo site-btn">Browse</a>
 			</div>
 		</div>
 	</div>
@@ -254,7 +254,7 @@
 	<!-- services card section-->
 	<div class="services-card-section spad">
 		<div class="container">
-			<div class="row">
+			<div id="card" class="row">
 				<!-- Single Card -->
 				<div class="col-md-4 col-sm-6">
 					<div class="sv-card">

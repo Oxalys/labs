@@ -28,6 +28,7 @@ Route::get('/home', function() {
 })->name('home')->middleware('auth');
 
 
+Route::post('/save','FormController@store')->name('save');
 
 
 Route::get('/header', 'HeaderController@indexview')->name('header.edit');
@@ -41,6 +42,7 @@ Route::get('/footer', 'FooterController@indexview')->name('footer.edit');
 
 Route::resource("header","HeaderController");
 Route::resource("about","AboutController");
+Route::resource('team','TeamController');
 Route::resource("promo","PromoController");
 Route::resource("contactSection","ContactSectionController");
 Route::resource("footer","FooterController");

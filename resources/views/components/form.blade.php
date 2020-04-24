@@ -14,25 +14,26 @@
                 <p class="con-item">{{$item->adresse }}</p>
                 <p class="con-item">{{$item->tel}}</p>
                 <p class="con-item">{{$item->mail}}</p>
+                @endforeach
             </div>
-                    @endforeach
             <!-- contact form -->
             <div class="col-md-6 col-pull">
-                <form class="form-class" id="con_form">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <input type="text" name="name" placeholder="Your name">
+                <form action="{{route('save')}}"class="form-class" id="con_form" method="POST">
+                    @csrf
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <input type="text" name="nom" placeholder="Your name">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" name="email" placeholder="Your email">
+                            </div>
+                            <div class="col-sm-12">
+                                <input type="text" name="subject" placeholder="Subject">
+                                <textarea name="message" placeholder="Message"></textarea>
+                                <button class="site-btn">Send</button>
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <input type="text" name="email" placeholder="Your email">
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="text" name="subject" placeholder="Subject">
-                            <textarea name="message" placeholder="Message"></textarea>
-                            <button class="site-btn">send</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
             </div>
         </div>
     </div>

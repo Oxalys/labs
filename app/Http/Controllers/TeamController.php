@@ -2,39 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Welcome;
-use App\Header;
-use App\ImgHeader;
-use App\About;
+use App\Team;
 use App\User;
-use App\Promo;
-use App\Contact;
-use App\Footer;
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class TeamController extends Controller
 {
-    /**
+    /*
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $header = Header::all();
-        $about = About::all();
-        $imgHeader = ImgHeader::all();
-
-        $CEO = User::where('role_id','=', 1)->first();
-        $teams = User::inRandomOrder()->where('role_id','!=', 4)->where('role_id','!=', 1)->take(2)->get();
-    
-        $promo = Promo::all();
-        $contactSection = Contact::all();
-        $footer = Footer::find(1);
-        return view('welcome.welcome', compact("header", "imgHeader", "about", "CEO", "teams", "promo", "contactSection", "footer"));
+        $team=User::find(1);
+        return view('welcome.welcome',compact('team'));
     }
 
-    /**
+    /*
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -44,7 +29,7 @@ class WelcomeController extends Controller
         //
     }
 
-    /**
+    /*
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -55,36 +40,36 @@ class WelcomeController extends Controller
         //
     }
 
-    /**
+    /*
      * Display the specified resource.
      *
-     * @param  \App\Welcome  $welcome
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(Welcome $welcome)
+    public function show(Team $team)
     {
         //
     }
 
-    /**
+    /*
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Welcome  $welcome
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function edit(Welcome $welcome)
+    public function edit(Team $team)
     {
         //
     }
 
-    /**
+    /*
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Welcome  $welcome
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Welcome $welcome)
+    public function update(Request $request, Team $team)
     {
         //
     }
@@ -92,10 +77,10 @@ class WelcomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Welcome  $welcome
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Welcome $welcome)
+    public function destroy(Team $team)
     {
         //
     }

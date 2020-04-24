@@ -17,7 +17,8 @@ class ServiceController extends Controller
     public function index()
     {
         $header = Header::all();
-        return view ('services.services', compact("header"));
+        $service = Service::all();
+        return view ('services.services', compact("header", "service"));
     }
 
     /**
@@ -27,7 +28,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -38,7 +39,12 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $service = New Service();
+        $service->logo=$request->input("logo");
+        $service->titre=$request->input("titre");
+        $service->texte=$request->input("texte");
+        $service->save();
+        return redirect()->back();
     }
 
     /**
