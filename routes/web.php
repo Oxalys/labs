@@ -35,11 +35,13 @@ Route::get('/overview', 'OverviewController@indexview')->name('overview.edit');
 Route::get('/about', 'AboutController@indexview')->name('about.edit');
 Route::get('/testi', 'TestiController@indexview')->name('testi.edit');
 Route::get('/promo', 'PromoController@indexview')->name('promo.edit');
-Route::get('/contactSection', 'ContactEditController@indexview')->name('contact.edit');
+Route::get('/contactSection', 'ContactSectionController@indexview')->name('contact.edit');
 Route::get('/footer', 'FooterController@indexview')->name('footer.edit');
 
 
 Route::resource("header","HeaderController");
 Route::resource("about","AboutController");
+Route::resource("promo","PromoController");
+Route::resource("contactSection","ContactSectionController");
 Route::resource("footer","FooterController");
 

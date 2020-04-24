@@ -15,6 +15,8 @@ class CreatePromosTable extends Migration
     {
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
+            $table->string('titre');
+            $table->string('texte');
             $table->timestamps();
         });
     }

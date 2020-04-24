@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\ContactSection;
+
 use Illuminate\Http\Request;
 
-class ContactEditController extends Controller
+class ContactSectionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexview()
+    public function index()
     {
-        return view('backoffice.contactEdit');
+        $contactSection = ContactSection::first();
+        return view('backoffice.contactEdit', compact('contactSection'));
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -41,10 +43,10 @@ class ContactEditController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\ContactSection  $contactSection
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ContactSection $contactSection)
     {
         //
     }
@@ -52,10 +54,10 @@ class ContactEditController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\ContactSection  $contactSection
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ContactSection $contactSection)
     {
         //
     }
@@ -64,21 +66,30 @@ class ContactEditController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\ContactSection  $contactSection
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ContactSection $contactSection)
     {
-        //
+        $contactSection->description=$request->input('description');
+        $contactSection->bureau=$request->input('bureau');
+        $contactSection->adresse=$request->input('adresse');
+        $contactSection->villecode=$request->input('villecode');
+        $contactSection->tel=$request->input('tel');
+        $contactSection->mail=$request->input('mail');
+
+        $contactSection->save();
+        
+        return redirect()->route("index");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\ContactSection  $contactSection
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ContactSection $contactSection)
     {
         //
     }

@@ -17,14 +17,11 @@ class CreateContactsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('description');
-            $table->string('paysvilles');
+            $table->string('bureau');
             $table->string('adresse');
-            $table->string('numero');
-            $table->string('email');
-
-
-
-
+            $table->string('villecode');
+            $table->string('tel');
+            $table->string('mail');
         });
     }
 

@@ -7,6 +7,7 @@ use App\Header;
 use App\ImgHeader;
 use App\About;
 use App\Promo;
+use App\Contact;
 use App\Footer;
 use Illuminate\Http\Request;
 
@@ -23,8 +24,9 @@ class WelcomeController extends Controller
         $about = About::all();
         $imgHeader = ImgHeader::all();
         $promo = Promo::all();
+        $contactSection = Contact::all();
         $footer = Footer::find(1);
-        return view('welcome.welcome', compact("header", "imgHeader", "about", "promo", "footer"));
+        return view('welcome.welcome', compact("header", "imgHeader", "about", "promo", "contactSection", "footer"));
     }
 
     /**
