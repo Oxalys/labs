@@ -41,11 +41,11 @@ class HeaderController extends Controller
     {
         $storage=Storage::disk('public')->put('', $request->file('img'));
     
-    $imgHeader= new ImgHeader();
-    $imgHeader->img = $storage;
+        $imgHeader= new ImgHeader();
+        $imgHeader->img = $storage;
     
-    $imgHeader->save();
-    return  redirect()->back();
+        $imgHeader->save();
+        return  redirect()->back();
     }
 
     /**

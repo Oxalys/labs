@@ -29,23 +29,28 @@ Route::get('/home', function() {
 
 
 Route::post('/save','FormController@store')->name('save');
+Route::post('/save','TestiController@store')->name('save');
 
 
 Route::get('/header', 'HeaderController@indexview')->name('header.edit');
-Route::get('/delete/{id}', 'HeaderController@destroy')->name('delete');
 Route::get('/overview', 'OverviewController@indexview')->name('overview.edit'); 
 Route::get('/about', 'AboutController@indexview')->name('about.edit');
 Route::get('/testi', 'TestiController@indexview')->name('testi.edit');
 Route::get('/promo', 'PromoController@indexview')->name('promo.edit');
 Route::get('/contactSection', 'ContactSectionController@indexview')->name('contact.edit');
 Route::get('/footer', 'FooterController@indexview')->name('footer.edit');
+Route::get('/newsletter', 'NewsletterController@indexview')->name('newsletter.edit');
 
 
 Route::resource("header","HeaderController");
 Route::resource("about","AboutController");
 Route::resource("testi","TestiController");
 Route::resource('team','TeamController');
+Route::resource('newsletter','Controller');
 Route::resource("promo","PromoController");
 Route::resource("contactSection","ContactSectionController");
 Route::resource("footer","FooterController");
 
+
+Route::get('/delete/{id}', 'HeaderController@destroy')->name('delete');
+Route::get('/delete/{id}', 'TestiController@destroy')->name('delete');

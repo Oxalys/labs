@@ -5,3 +5,10 @@
 .btn{
     background-color: #6a23b5;
 }
+
+.avatar{
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+}

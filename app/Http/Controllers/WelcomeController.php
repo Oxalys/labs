@@ -24,7 +24,7 @@ class WelcomeController extends Controller
     {
         $header = Header::all();
         $about = About::all();
-        $testi = Testi::all();
+        $testi = Testi::orderby('id', 'desc')->take(6)->get();
         $imgHeader = ImgHeader::all();
 
         $CEO = User::where('role_id','=', 1)->first();

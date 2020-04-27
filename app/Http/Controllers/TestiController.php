@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Testi;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class TestiController extends Controller
      */
     public function index()
     {
-        return view('backoffice.testiEdit');
+        $testi = Testi::all();
+        return view('backoffice.testiEdit', compact("testi"));
     }
 
 
@@ -37,11 +39,14 @@ class TestiController extends Controller
      */
     public function store(Request $request)
     {
-        $testi= new Testi();
-        $testi->comm = $storage;
-    
-    $testi->save();
-    return  redirect()->back();
+        $testi = new testi();
+        $photo=Storage::disk('public')->put('',$request->file('photo'));
+        $testi->auteur = $request->input('auteur');
+        $testi->role = $request->input('role');
+        $testi->comm = $request->input('comm');
+        $testi->photo = $photo;
+        $testi->save();
+        return  redirect()->back();
     }
 
     /**
@@ -86,6 +91,8 @@ class TestiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $testi = Testi::find($id);
+        $testi->delete();
+        return redirect()->route('testi.index');
     }
 }
