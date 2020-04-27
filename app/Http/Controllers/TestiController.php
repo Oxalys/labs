@@ -39,7 +39,7 @@ class TestiController extends Controller
      */
     public function store(Request $request)
     {
-        $testi = new testi();
+        $testi = new Testi();
         $photo=Storage::disk('public')->put('',$request->file('photo'));
         $testi->auteur = $request->input('auteur');
         $testi->role = $request->input('role');
@@ -66,9 +66,9 @@ class TestiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Testi $testi)
     {
-        //
+        return view('backoffice.editComm', compact('testi'));
     }
 
     /**
@@ -78,9 +78,16 @@ class TestiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Testi $testi)
     {
-        //
+        $photo=Storage::disk('public')->put('',$request->file('photo'));
+        $testi->auteur = $request->input('auteur');
+        $testi->role = $request->input('role');
+        $testi->comm = $request->input('comm');
+        $testi->photo = $photo;
+
+        $testi->save();
+        return redirect()->route('testi.index');
     }
 
     /**
@@ -89,9 +96,8 @@ class TestiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Testi $testi)
     {
-        $testi = Testi::find($id);
         $testi->delete();
         return redirect()->route('testi.index');
     }

@@ -39,18 +39,17 @@ Route::get('/testi', 'TestiController@indexview')->name('testi.edit');
 Route::get('/promo', 'PromoController@indexview')->name('promo.edit');
 Route::get('/contactSection', 'ContactSectionController@indexview')->name('contact.edit');
 Route::get('/footer', 'FooterController@indexview')->name('footer.edit');
-Route::get('/newsletter', 'NewsletterController@indexview')->name('newsletter.edit');
+Route::get('/newsletter', 'NewsletterController@indexview');
+Route::get('/service', 'ServiceController@indexview')->name('service.edit');
+Route::get('/maps', 'MapController@indexview')->name('map.edit'); 
 
 
 Route::resource("header","HeaderController");
 Route::resource("about","AboutController");
 Route::resource("testi","TestiController");
 Route::resource('team','TeamController');
-Route::resource('newsletter','Controller');
+Route::resource('newsletter','NewsletterController');
 Route::resource("promo","PromoController");
 Route::resource("contactSection","ContactSectionController");
 Route::resource("footer","FooterController");
 
-
-Route::get('/delete/{id}', 'HeaderController@destroy')->name('delete');
-Route::get('/delete/{id}', 'TestiController@destroy')->name('delete');

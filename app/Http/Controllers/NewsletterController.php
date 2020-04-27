@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Header;
-use App\ImgHeader;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-class HeaderController extends Controller
+use App\Newsletter;
+
+class NewsletterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,8 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        $headers = Header::find(1);
-        $img_headers = ImgHeader::all();
-        return view("backoffice.headerEdit", compact("headers", "img_headers"));
+        $newsletter = Newsletter::all();
+        return view('backoffice.newsletter', compact('newsletter'));
     }
 
     /**
@@ -39,13 +37,10 @@ class HeaderController extends Controller
      */
     public function store(Request $request)
     {
-        $storage=Storage::disk('public')->put('', $request->file('img'));
-    
-        $imgHeader= new ImgHeader();
-        $imgHeader->img = $storage;
-    
-        $imgHeader->save();
-        return  redirect()->back();
+        $newsletter = new Newsletter();
+        $newsletter->mail = $request->input('mail');
+        $newsletter->save();
+        return  redirect()->to(url()->previous() . '#news')->with('news', 'Vous vous êtes bien abonné à la newsletter');
     }
 
     /**
@@ -67,7 +62,7 @@ class HeaderController extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
@@ -77,16 +72,9 @@ class HeaderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Header $header)
+    public function update(Request $request, $id)
     {
-        if ($request->hasFile('logo')) {
-            $logo=Storage::disk('public')->put('', $request->file('logo'));
-            $header->logo=$logo;
-        }
-
-        $header->texte=$request->input('texte');
-        $header->save();
-        return redirect()->route("index");
+        //
     }
 
     /**
@@ -95,10 +83,8 @@ class HeaderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ImgHeader $header)
+    public function destroy($id)
     {
-        Storage::disk('public')->delete($header->img);
-        $header->delete();
-        return redirect()->route('header.index');
+        //
     }
 }

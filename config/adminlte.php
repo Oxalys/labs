@@ -255,17 +255,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Services',
-                    'url'  => 'admin/header',
+                    'url'  => '/service',
                     'icon' => 'fas fa-fw fa-poll-h',
                 ],
                 [
-                    'text' => 'Articles',
-                    'url'  => 'admin/header',
-                    'icon' => 'fas fa-fw fa-newspaper',
-                ],
-                [
                     'text' => 'Newsletter',
-                    'url'  => 'admin/header',
+                    'url'  => '/newsletter',
                     'icon' => 'fas fa-fw fa-envelope',
                 ],
                 
@@ -277,7 +272,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Maps',
-                    'url'  => 'admin/header',
+                    'url'  => '/map',
                     'icon' => 'fas fa-fw fa-map',
                 ],
             ],

@@ -39,10 +39,16 @@
       <td>{{$item->auteur}}</td>
       <td>{{$item->role}}</td>
       <td> {{$item->comm}}</td>
-      <td><a href="{{route('delete', $item->id)}}" class="btn btn-primary">Delete</a></td>
+      <td class="w-25">
+      <a class="btn mb-2 btn-primary" href="{{route('testi.edit', $item)}}">Edit</a>
+        <form method="POST" action="{{route("testi.destroy", $item)}}">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-danger" type="submit">Delete</button>
+      </form>
+      </td>
       </tr>
       @endforeach
-
   </tbody>
 </table>
 </div>

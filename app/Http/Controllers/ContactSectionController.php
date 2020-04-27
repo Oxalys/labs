@@ -37,7 +37,7 @@ class ContactSectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

@@ -703,10 +703,10 @@ ul {
 
 .member img { 
 	margin-bottom: 60px;
-	max-width: 360px;
-	min-width: 360px;
-	max-height: 448px;
-	min-height: 448px;
+	max-width: 28vw;
+	min-width: 28vw;
+	max-height: 67vh;
+	min-height: 67vh;
 }
 
 .member h2 {

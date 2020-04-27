@@ -298,7 +298,7 @@
 
 
 	<!-- newsletter section -->
-	<div class="newsletter-section spad">
+	<div id="news" class="newsletter-section spad">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">
@@ -306,8 +306,14 @@
 				</div>
 				<div class="col-md-9">
 					<!-- newsletter form -->
-					<form class="nl-form">
-						<input type="text" placeholder="Your e-mail here">
+				<form action="{{route('newsletter.store')}}" class="nl-form" method="POST">
+					@csrf
+					@if (session()->has('news'))
+                    <div class="alert alert-success" role="alert">
+                        {{session('news')}}
+                    </div>
+                    @endif
+						<input name="mail" type="text" placeholder="Your e-mail here">
 						<button class="site-btn btn-2">Newsletter</button>
 					</form>
 				</div>
