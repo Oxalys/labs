@@ -67,7 +67,7 @@ class HeaderController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -97,6 +97,9 @@ class HeaderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $imgHeader = ImgHeader::find($id);
+        Storage::disk('public')->delete($imgHeader->img);
+        $imgHeader->delete();
+        return redirect()->route('header.index');
     }
 }

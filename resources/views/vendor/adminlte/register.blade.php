@@ -29,7 +29,7 @@
         <div class="card">
             <div class="card-body register-card-body">
             <p class="login-box-msg">{{ __('adminlte::adminlte.register_message') }}</p>
-            <form action="{{ $register_url }}" method="post">
+            <form enctype="multipart/form-data" action="{{ $register_url }}" method="post">
                 {{ csrf_field() }}
 
                 <div class="input-group mb-3">
@@ -89,6 +89,13 @@
                         </div>
                     @endif
                 </div>
+                <div class="input-group mb-3">
+                    <input type="file" name="photo" class="form-control">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
                 <button type="submit" class="btn btn-primary btn-block btn-flat">
                     {{ __('adminlte::adminlte.register') }}
                 </button>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Header;
+use App\Footer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +19,8 @@ class BlogController extends Controller
     public function index()
     {
         $header = Header::all();
-        return view ('blog.blog', compact("header"));
+        $footer = Footer::find(1);
+        return view ('blog.blog', compact("header", "footer"));
     }
 
     /**

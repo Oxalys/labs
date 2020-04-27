@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Service;
 use App\Header;
+use App\Contact;
+use App\Footer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +20,9 @@ class ServiceController extends Controller
     {
         $header = Header::all();
         $service = Service::all();
-        return view ('services.services', compact("header", "service"));
+        $contactSection = Contact::all();
+        $footer = Footer::find(1);
+        return view ('services.services', compact("header", "service", "contactSection", "footer"));
     }
 
     /**

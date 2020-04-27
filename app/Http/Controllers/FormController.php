@@ -55,9 +55,9 @@ class FormController extends Controller
         $message =$request->input('message');
 
 
-        Mail::to('bryan.londot@hotmail.com')->send(new MessageMail($request));
+        Mail::to('s.yonte.montero@gmail.com')->send(new MessageMail($request));
 
-        return redirect()->back();
+        return redirect()->to(url()->previous() . '#mail')->with('send', 'Votre message a bien été envoyé !');    
     }
 
     /*

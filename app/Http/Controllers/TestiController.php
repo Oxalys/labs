@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Testi;
+
 use Illuminate\Http\Request;
 
 class TestiController extends Controller
@@ -11,7 +13,7 @@ class TestiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexview()
+    public function index()
     {
         return view('backoffice.testiEdit');
     }
@@ -35,7 +37,11 @@ class TestiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $testi= new Testi();
+        $testi->comm = $storage;
+    
+    $testi->save();
+    return  redirect()->back();
     }
 
     /**

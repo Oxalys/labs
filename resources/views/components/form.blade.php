@@ -1,5 +1,5 @@
 <!-- Contact section -->
-<div class="contact-section spad fix">
+<div id="mail" class="contact-section spad fix">
     <div class="container">
         <div class="row">
             <!-- contact info -->
@@ -20,6 +20,11 @@
             <div class="col-md-6 col-pull">
                 <form action="{{route('save')}}"class="form-class" id="con_form" method="POST">
                     @csrf
+                    @if (session()->has('send'))
+                    <div class="alert alert-success" role="alert">
+                        {{session('send')}}
+                    </div>
+                    @endif
                         <div class="form-row">
                             <div class="col-sm-6">
                                 <input type="text" name="nom" placeholder="Your name">

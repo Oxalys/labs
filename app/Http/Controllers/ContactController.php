@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use App\Header;
+use App\Footer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,7 +18,9 @@ class ContactController extends Controller
     public function index()
     {
         $header = Header::all();
-        return view ('contact.contact', compact("header"));
+        $contactSection = Contact::all();
+        $footer = Footer::find(1);;
+        return view ('contact.contact', compact("header", "contactSection", "footer"));
     }
 
     /**

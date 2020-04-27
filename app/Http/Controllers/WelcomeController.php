@@ -6,6 +6,7 @@ use App\Welcome;
 use App\Header;
 use App\ImgHeader;
 use App\About;
+use App\Testi;
 use App\User;
 use App\Promo;
 use App\Contact;
@@ -23,6 +24,7 @@ class WelcomeController extends Controller
     {
         $header = Header::all();
         $about = About::all();
+        $testi = Testi::all();
         $imgHeader = ImgHeader::all();
 
         $CEO = User::where('role_id','=', 1)->first();
@@ -31,7 +33,7 @@ class WelcomeController extends Controller
         $promo = Promo::all();
         $contactSection = Contact::all();
         $footer = Footer::find(1);
-        return view('welcome.welcome', compact("header", "imgHeader", "about", "CEO", "teams", "promo", "contactSection", "footer"));
+        return view('welcome.welcome', compact("header", "imgHeader", "about", "testi", "CEO", "teams", "promo", "contactSection", "footer"));
     }
 
     /**

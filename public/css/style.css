@@ -701,8 +701,12 @@ ul {
 	text-align: center;
 }
 
-.member img {
+.member img { 
 	margin-bottom: 60px;
+	max-width: 360px;
+	min-width: 360px;
+	max-height: 448px;
+	min-height: 448px;
 }
 
 .member h2 {

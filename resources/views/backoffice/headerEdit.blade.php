@@ -49,7 +49,7 @@
         @foreach ($img_headers as $item)
         <tr>
         <td class="w-50"><img class="w-50" src="{{asset('storage/'.$item->img)}}"></td>
-        <td class="w-25"><a href="" class="btn btn-primary">Edit</a></td>
+        <td class="w-25"><a href="{{route('delete', $item->id)}}" class="btn btn-primary">Delete</a></td>
         </tr>
         @endforeach
 

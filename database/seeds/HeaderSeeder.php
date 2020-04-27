@@ -13,7 +13,7 @@ class HeaderSeeder extends Seeder
     {
         DB::table('headers')->insert([
             'logo' => "big-logo.png",
-            'texte' => "Get your freebie template now!"
+            'texte' => "Get your freebie template now!",
         ]);
     }
 }
