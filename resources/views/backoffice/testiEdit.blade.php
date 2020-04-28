@@ -1,6 +1,10 @@
 @extends('adminlte::page')
 
 @section('content')
+<header class="mb-5">
+  <h1 class="text-center">Testimonials</h1>
+</header>
+
     <div class="container">
 <form name="" action="{{route("testi.store")}}" method="POST" enctype="multipart/form-data" >
     @csrf

@@ -33,15 +33,14 @@ Route::post('/save','TestiController@store')->name('save');
 
 
 Route::get('/header', 'HeaderController@indexview')->name('header.edit');
-Route::get('/overview', 'OverviewController@indexview')->name('overview.edit'); 
+Route::get('/overview', 'SeeServController@indexview')->name('overview.edit'); 
 Route::get('/about', 'AboutController@indexview')->name('about.edit');
 Route::get('/testi', 'TestiController@indexview')->name('testi.edit');
 Route::get('/promo', 'PromoController@indexview')->name('promo.edit');
 Route::get('/contactSection', 'ContactSectionController@indexview')->name('contact.edit');
 Route::get('/footer', 'FooterController@indexview')->name('footer.edit');
 Route::get('/newsletter', 'NewsletterController@indexview');
-Route::get('/service', 'ServiceController@indexview')->name('service.edit');
-Route::get('/maps', 'MapController@indexview')->name('map.edit'); 
+Route::get('/map', 'MapController@indexview')->name('map.edit'); 
 
 
 Route::resource("header","HeaderController");

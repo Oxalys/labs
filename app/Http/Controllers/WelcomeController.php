@@ -6,6 +6,7 @@ use App\Welcome;
 use App\Header;
 use App\ImgHeader;
 use App\About;
+use App\SeeServ;
 use App\Testi;
 use App\User;
 use App\Promo;
@@ -27,13 +28,16 @@ class WelcomeController extends Controller
         $testi = Testi::orderby('id', 'desc')->take(6)->get();
         $imgHeader = ImgHeader::all();
 
+        $overview = SeeServ::inRandomOrder()->take(3)->get();
+        $seeServ = SeeServ::latest()->take(9)->get();
+
         $CEO = User::where('role_id','=', 1)->first();
         $teams = User::inRandomOrder()->where('role_id','!=', 4)->where('role_id','!=', 1)->take(2)->get();
     
         $promo = Promo::all();
         $contactSection = Contact::all();
         $footer = Footer::find(1);
-        return view('welcome.welcome', compact("header", "imgHeader", "about", "testi", "CEO", "teams", "promo", "contactSection", "footer"));
+        return view('welcome.welcome', compact("header", "imgHeader", "about", "overview", "seeServ", "testi", "CEO", "teams", "promo", "contactSection", "footer"));
     }
 
     /**

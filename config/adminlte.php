@@ -228,11 +228,6 @@ return [
                     'icon' => 'fas fa-fw fa-comment-dots',
                 ],
                 [
-                    'text' => 'Service Overview',
-                    'url'  => '/overview',
-                    'icon' => 'fas fa-fw fa-poll-h',
-                ],
-                [
                     'text' => 'Promotion',
                     'url'  => '/promo',
                     'icon' => 'fas fa-fw fa-ad',
@@ -255,7 +250,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Services',
-                    'url'  => '/service',
+                    'url'  => '/overview',
                     'icon' => 'fas fa-fw fa-poll-h',
                 ],
                 [

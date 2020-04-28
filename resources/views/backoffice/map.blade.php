@@ -3,20 +3,16 @@
 @section('content')
     
 <header>
-    <h1 class="editation text-center">Promotion</h1>
+    <h1 class="editation text-center">Plan du bureau : </h1>
 </header>
 
 {{-- logo --}}
 <div class="container">
   <div class="form-register">
-  <form name="" action="{{route("promo.update", $promo)}}" method="POST" enctype="multipart/form-data" >
+  <form name="" action="" method="POST" enctype="multipart/form-data" >
   @csrf
   @method("PUT")
   <div class="form-group">
-    <label class="mr-3 mt-2" for="">Titre:</label>
-    <input class="form-control w-25 mr-3" value="" name="titre">
-    <label class="mr-3 mt-2" for="">Phrase:</label>
-    <input class="form-control w-25 mr-3" value="" name="texte">
     </div>
     <input type="submit" value="Update" class="btn btn-primary mb-2">
 </form>

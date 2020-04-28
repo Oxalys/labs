@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\SeeServ;
+
 use Illuminate\Http\Request;
 
-class OverviewController extends Controller
+class SeeServController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,7 @@ class OverviewController extends Controller
      */
     public function indexview()
     {
-        return view('backoffice.overviewEdit');
+        return view('backoffice.seeServEdit');
     }
 
 
