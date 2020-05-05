@@ -55,3 +55,8 @@ Route::resource("footer","FooterController");
 Route::resource("seeServ","SeeServController");
 Route::resource("quote","QuoteController");
 
+
+Route::get('/search', 'BlogController@search')->name('search');
+Route::get('/searchcat/{id}', 'BlogController@searchcat')->name('searchcat');
+Route::get('/searchtag/{tag}', 'BlogController@searchtag')->name('searchtag');
+

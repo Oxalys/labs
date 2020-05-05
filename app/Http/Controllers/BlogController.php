@@ -6,6 +6,8 @@ use App\Blog;
 use App\Quote;
 use App\Header;
 use App\Article;
+use App\Categorie;
+use App\Tag;
 use App\Footer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -22,8 +24,11 @@ class BlogController extends Controller
     {
         $header = Header::all();
         $quote = Quote::find(1);
+        $articles = Article::where('valid', 1)->orderby('id', 'desc')->paginate(3);
+        $categories = Categorie::inRandomOrder()->take(6)->get();
+        $tags = Tag::inRandomOrder()->take(9)->get();
         $footer = Footer::find(1);
-        return view ('blog.blog', compact("header", "quote", "footer"));
+        return view ('blog.blog', compact("header", "quote", "categories", "tags", "articles", "footer"));
     }
 
 
@@ -34,8 +39,33 @@ class BlogController extends Controller
         //
         $header = Header::all();
         $quote = Quote::find(1);
+        $categories = Categorie::inRandomOrder()->take(6)->get();
+        $tags = Tag::inRandomOrder()->take(9)->get();
         $footer = Footer::find(1);
-        return view ('blog.blog', compact("header", "quote", "footer", "articles", 'search'));
+        return view ('blog.blog', compact("header", "quote", "categories", "tags", "footer", "articles", 'search'));
+    }
+
+    public function searchcat($id) {
+        $articles = Article::where('categorie_id', $id)->where('valid', 1)->orderby('id', 'desc')->paginate(3);
+        //
+        $header = Header::all();
+        $quote = Quote::find(1);
+        $categories = Categorie::inRandomOrder()->take(6)->get();
+        $tags = Tag::inRandomOrder()->take(9)->get();
+        $footer = Footer::find(1);
+        return view ('blog.blog', compact("header", "quote", "categories", "tags", "footer", "articles", 'search'));
+    }
+
+    public function searchtag(Tag $tag) {
+
+        $articles = $tag->articles()->where('valid', 1)->orderby('id', 'desc')->paginate(3);
+        //
+        $header = Header::all();
+        $quote = Quote::find(1);
+        $categories = Categorie::inRandomOrder()->take(6)->get();
+        $tags = Tag::inRandomOrder()->take(9)->get();
+        $footer = Footer::find(1);
+        return view ('blog.blog', compact("header", "quote", "categories", "tags", "footer", "articles", 'search'));
     }
 
     /**

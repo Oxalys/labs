@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('titre');
             $table->string('img');
-            $table->string('texte');
+            $table->text('texte');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->on('users')
             ->references('id')
@@ -28,6 +28,7 @@ class CreateArticlesTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+            $table->string('valid');
             $table->timestamps();
         });
 

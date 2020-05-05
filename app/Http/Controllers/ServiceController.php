@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Header;
 use App\SeeServ;
+use App\Article;
 use App\Contact;
 use App\Newsletter;
 use App\Footer;
@@ -22,10 +23,11 @@ class ServiceController extends Controller
         $header = Header::all();
         $seeServ = SeeServ::latest()->take(9)->get();
         $features = SeeServ::latest()->take(3)->get();
+        $articles = Article::where('valid', '1')->orderby('id', 'desc')->take(3)->get();
         $newsletter = Newsletter::all();
         $contactSection = Contact::all();
         $footer = Footer::find(1);
-        return view ('services.services', compact("header", "seeServ", "features", "newsletter", "contactSection", "footer"));
+        return view ('services.services', compact("header", "seeServ", "features", "articles", "newsletter", "contactSection", "footer"));
     }
 
     /**
