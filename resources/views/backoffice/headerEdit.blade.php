@@ -2,7 +2,7 @@
 
 @section('content')
   <header>
-      <h1 class="editation text-center">Header</h1>
+      <h1 class="editation text-center my-4">Header</h1>
   </header>
 
   {{-- logo --}}
@@ -21,7 +21,7 @@
     </div> 
     <div class="form-group d-flex">
       <label class="mr-3 mt-2" for="">Phrase:</label>
-      <input class="form-control w-25 mr-3" value="" name="texte" id="" >
+      <textarea class="form-control w-25 mr-3" required="required" type="text" name="texte" placeholder="Get your freebie template now!"></textarea>
       <input type="submit" value="Update" class="btn btn-primary mb-2">
     </div>
     {{-- phrase --}}

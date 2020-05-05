@@ -5,7 +5,7 @@
   <h1 class="text-center">Testimonials</h1>
 </header>
 
-    <div class="container">
+<div class="container">
 <form name="" action="{{route("testi.store")}}" method="POST" enctype="multipart/form-data" >
     @csrf
 

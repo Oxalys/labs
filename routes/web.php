@@ -33,7 +33,7 @@ Route::post('/save','TestiController@store')->name('save');
 
 
 Route::get('/header', 'HeaderController@indexview')->name('header.edit');
-Route::get('/overview', 'SeeServController@indexview')->name('overview.edit'); 
+Route::get('/overview', 'SeeServController@index')->name('overview.edit'); 
 Route::get('/about', 'AboutController@indexview')->name('about.edit');
 Route::get('/testi', 'TestiController@indexview')->name('testi.edit');
 Route::get('/promo', 'PromoController@indexview')->name('promo.edit');
@@ -41,6 +41,7 @@ Route::get('/contactSection', 'ContactSectionController@indexview')->name('conta
 Route::get('/footer', 'FooterController@indexview')->name('footer.edit');
 Route::get('/newsletter', 'NewsletterController@indexview');
 Route::get('/map', 'MapController@indexview')->name('map.edit'); 
+Route::get('/quote', 'QuoteController@indexview')->name('quote.edit'); 
 
 
 Route::resource("header","HeaderController");
@@ -51,4 +52,6 @@ Route::resource('newsletter','NewsletterController');
 Route::resource("promo","PromoController");
 Route::resource("contactSection","ContactSectionController");
 Route::resource("footer","FooterController");
+Route::resource("seeServ","SeeServController");
+Route::resource("quote","QuoteController");
 

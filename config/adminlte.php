@@ -277,8 +277,8 @@ return [
             'icon'    => 'fas fa-fw fa-newspaper',
             'submenu' => [
                 [
-                    'text' => 'Section 1',
-                    'url'  => 'admin/header',
+                    'text' => 'Quote',
+                    'url'  => '/quote',
                     'icon' => 'fas fa-fw fa-file',
                 ],
                 [

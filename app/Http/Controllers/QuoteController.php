@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Map;
-
+use App\Quote;
 use Illuminate\Http\Request;
 
-class MapController extends Controller
+class QuoteController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexview()
+    public function index()
     {
-        $map = Map::all();
-        return view('backoffice.map', compact("map"));
+        $quote = Quote::all();
+        return view("backoffice.quote", compact("quote"));
     }
 
     /**
@@ -69,9 +68,11 @@ class MapController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Quote $quote)
     {
-        //
+        $quote->quote=$request->input('quote');
+        $quote->save();
+        return redirect()->back();
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSeeServsTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateSeeServsTable extends Migration
      */
     public function up()
     {
-        Schema::create('see_servs', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->string("logo");
-            $table->string("titre");
-            $table->string("texte");
             $table->timestamps();
-
         });
     }
 
@@ -30,6 +26,6 @@ class CreateSeeServsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('see_servs');
+        Schema::dropIfExists('tags');
     }
 }

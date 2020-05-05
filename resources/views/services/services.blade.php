@@ -61,7 +61,7 @@
 					<div class="icon-box light left">
 						<div class="service-text">
 							<h2>{{$item->titre}}</h2>
-							<p>{{$item->texteCourt}}</p>
+							<p>{{$item->texte}}</p>
 						</div>
 						<div class="icon">
 							<i class="{{$item->logo}}"></i>
@@ -84,7 +84,7 @@
 						</div>
 						<div class="service-text">
 							<h2>{{$item->titre}}</h2>
-							<p>{{$item->texteCourt}}</p>
+							<p>{{$item->texte}}</p>
 						</div>
 					</div>
 					@endforeach

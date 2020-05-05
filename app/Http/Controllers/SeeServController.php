@@ -13,9 +13,10 @@ class SeeServController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexview()
+    public function index()
     {
-        return view('backoffice.seeServEdit');
+        $seeServ = SeeServ::all();
+        return view('backoffice.seeServAdd', compact('seeServ'));
     }
 
 
@@ -37,7 +38,13 @@ class SeeServController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $seeServ = new SeeServ();
+        $seeServ->titre = $request->input('titre');
+        $seeServ->texte = $request->input('texte');
+        $seeServ->logo = $request->input('logo');
+
+        $seeServ->save();
+        return  redirect()->back();
     }
 
     /**
@@ -57,9 +64,9 @@ class SeeServController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(SeeServ $seeServ)
     {
-        //
+        return view('backoffice.seeServEdit', compact('seeServ'));
     }
 
     /**
@@ -69,9 +76,14 @@ class SeeServController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, SeeServ $seeServ)
     {
-        //
+        $seeServ->titre = $request->input('titre');
+        $seeServ->texte = $request->input('texte');
+        $seeServ->logo = $request->input('logo');
+
+        $seeServ->save();
+        return redirect()->route('seeServ.index');
     }
 
     /**
@@ -80,8 +92,9 @@ class SeeServController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SeeServ $seeServ)
     {
-        //
+        $seeServ->delete();
+        return redirect()->route('seeServ.index');
     }
 }

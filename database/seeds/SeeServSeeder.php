@@ -16,16 +16,12 @@ class SeeServSeeder extends Seeder
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
 
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
-
             'logo' => "flaticon-023-flask",
         ]);
         DB::table('see_servs')->insert([
             'titre' => "PROJECTS ONLINE",
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
-
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
 
             'logo' => "flaticon-011-compass",
         ]);
@@ -34,16 +30,12 @@ class SeeServSeeder extends Seeder
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
 
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
-
             'logo' => "flaticon-037-idea",
         ]);
         DB::table('see_servs')->insert([
             'titre' => "SOCIAL MEDIA",
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
-
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
 
             'logo' => "flaticon-039-vector",
         ]);
@@ -52,16 +44,12 @@ class SeeServSeeder extends Seeder
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
 
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
-
             'logo' => "flaticon-036-brainstorming",
         ]);
         DB::table('see_servs')->insert([
             'titre' => "DOCUMENTED",
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
-
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
 
             'logo' => "flaticon-026-search",
         ]);
@@ -70,16 +58,12 @@ class SeeServSeeder extends Seeder
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
 
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
-
             'logo' => "flaticon-018-laptop-1",
         ]);
         DB::table('see_servs')->insert([
             'titre' => "RETINA READY",
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
-
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
 
             'logo' => "flaticon-043-sketch",
         ]);
@@ -88,8 +72,6 @@ class SeeServSeeder extends Seeder
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
 
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
-
             'logo' => "flaticon-012-cube",
         ]);
         DB::table('see_servs')->insert([
@@ -97,16 +79,12 @@ class SeeServSeeder extends Seeder
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
 
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
-
             'logo' => "flaticon-005-thinking-1",
         ]);
         DB::table('see_servs')->insert([
             'titre' => "FROM THE TREE",
 
             'texte' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..",
-
-            'texteCourt' => "Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec",
 
             'logo' => "flaticon-032-explorer",
         ]);

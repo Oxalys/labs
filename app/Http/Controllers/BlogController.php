@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Quote;
 use App\Header;
+use App\Article;
 use App\Footer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -19,8 +21,21 @@ class BlogController extends Controller
     public function index()
     {
         $header = Header::all();
+        $quote = Quote::find(1);
         $footer = Footer::find(1);
-        return view ('blog.blog', compact("header", "footer"));
+        return view ('blog.blog', compact("header", "quote", "footer"));
+    }
+
+
+    public function search(Request $request) {
+        $search = $request->input('search');
+        $articles = Article::where('titre','LIKE','%'. $search .'%')->where('valid', 1)->orderby('id', 'desc')->paginate(3);
+
+        //
+        $header = Header::all();
+        $quote = Quote::find(1);
+        $footer = Footer::find(1);
+        return view ('blog.blog', compact("header", "quote", "footer", "articles", 'search'));
     }
 
     /**
