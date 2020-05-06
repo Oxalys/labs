@@ -1195,15 +1195,15 @@ ul {
 
 .widget-item ul.tag li {
 	display: inline-block;
-	background: #2be6ab;
 	padding: 10px 24px;
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 15px;
 }
 
-.widget-item ul.tag li a {
-	color: #6a23b5;
+.widget-item ul.tag li button {
+	background-color: #2be6ab;
+	color: white;
 	margin-bottom: 0;
 }
 

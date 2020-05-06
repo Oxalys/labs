@@ -54,6 +54,8 @@ Route::resource("contactSection","ContactSectionController");
 Route::resource("footer","FooterController");
 Route::resource("seeServ","SeeServController");
 Route::resource("quote","QuoteController");
+Route::resource("blogPost","BlogPostController");
+Route::resource("commentaire","CommentaireController");
 
 
 Route::get('/search', 'BlogController@search')->name('search');

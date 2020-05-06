@@ -65,7 +65,7 @@
 								<a href="">2 Comments</a>
 							</div>
 							<p>{{\Illuminate\Support\Str::limit($item->texte, 200, $end='...')}}</p>
-							<a href="blog-post.html" class="read-more">Read More</a>
+							<a href="{{route('blogPost.show', $item->id)}}" class="read-more">Read More</a>
 						</div>
 					</div>
 					@endforeach
@@ -97,8 +97,8 @@
 						<h2 class="widget-title">Tags</h2>
 						<ul class="tag"> 
 							@foreach ($tags as $item)
-                                <li class="test"><form action="{{route('searchtag', $item)}}" method="GET">
-                            <button class="btn btn-transparent" type="submit">{{$item->nom}}</button>
+                                <li class=""><form action="{{route('searchtag', $item)}}" method="GET">
+                            <button class="btn" type="submit">{{$item->nom}}</button>
                             </form></li>
                             @endforeach
 						</ul>

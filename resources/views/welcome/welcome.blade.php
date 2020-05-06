@@ -76,7 +76,7 @@
 				@foreach ($about as $item)
 					
 				<div class="section-title">
-					<h2>{{$item->titre}}</h2>
+					<h2>{!! App\helper\colorTitle::black($item->titre) !!}</h2>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
@@ -199,7 +199,7 @@
 			<div class="row">
 				@foreach ($promo as $item)
 				<div class="col-md-9">
-					<h2>{{$item->titre}}</h2>
+					<h2>{!! App\helper\colorTitle::black($item->titre) !!}</h2>
 					<p>{{$item->texte}}</p>
 				</div>
 				@endforeach

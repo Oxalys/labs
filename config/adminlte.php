@@ -282,12 +282,12 @@ return [
                     'icon' => 'fas fa-fw fa-file',
                 ],
                 [
-                    'text' => 'Section 2',
+                    'text' => 'Articles Redacteur',
                     'url'  => 'admin/header',
                     'icon' => 'fas fa-fw fa-file',
                 ],
                 [
-                    'text' => 'Section 3',
+                    'text' => 'Articles Webmaster',
                     'url'  => 'admin/header',
                     'icon' => 'fas fa-fw fa-file',
                 ],

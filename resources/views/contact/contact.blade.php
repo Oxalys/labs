@@ -15,7 +15,7 @@
 		<nav>
 			<ul class="menu-list">
 				<li><a href="{{route('index')}}">Home</a></li>
-				<li><a href="{{route('services.index')}}">Services</a></li>
+				<li><a href="{{route('services.index')}}">Services</a></li> 
 				<li><a href="{{route('blog.index')}}">Blog</a></li>
 				<li class="active"><a href="{{route('contact.index')}}">Contact</a></li>
 				<li><a href="{{route('home')}}">Login</a></li>
